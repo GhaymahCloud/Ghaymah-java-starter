@@ -1,10 +1,10 @@
-FROM openjdk:17-jdk-slim
+FROM maven:3.9-eclipse-temurin-17-alpine
 
 WORKDIR /app
 
 COPY . .
 
-RUN ./mvnw package -DskipTests
+RUN mvn package -DskipTests
 
 EXPOSE 8080
 
